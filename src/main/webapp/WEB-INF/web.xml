@@ -1,0 +1,11 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="true">
+</web-app>
+        <!-- 将Servlet版本修改成了3.1,原来的2.x版本对EL表达式支持不好 -->
+
+
+

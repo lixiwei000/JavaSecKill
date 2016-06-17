@@ -1,0 +1,56 @@
+
+PartII.Service开发
+开始之前
+Dao层工作演变为:
+    接口设计+SQL;
+    代码和SQL分离,方便Review;
+    Dao拼接等逻辑在Service层完成
+创建包:
+    service:业务
+    exception:秒杀异常
+    dto:Web和Service之间的数据传递,类似Entity.
+
+Spring托管Service依赖理论
+为什么用IOC
+    对象创建统一托管
+    规范的生命周期管理
+    灵活的依赖注入
+    一直的获取对象
+Spring-IOC注入方式和场景
+XML
+    Bean来自第三方类库,如DataSource
+    需要命名空间配置:如content,aop,mvc
+注解
+    项目中自身开发使用的类,可直接在代码中国使用如:@Service,@Controller
+Java配置类
+    需要通过代码控制对象创建逻辑的场景,如:自定义修改依赖类库
+
+本项目IOC使用
+    XML配置
+    package-scan
+    Annotation注解
+
+什么是声明式事物
+    开始事物
+    修改sql1
+    修改sql2
+    修改sql3
+    提交/回滚事物
+
+声明式事物使用方式
+ProxyFactoryBean + XML         - 早期使用方式
+tx:advice+aop命名空间           - 一次配置永久生效
+注解@Transactional             - 注解控制
+
+事物方法嵌套
+声明式事物独有的概念
+传播行为    ->      propagation_required  如果新的事物加入进来,如果有旧的就直接加入到原有的事物,如果没有就创建一个新的事物
+
+什么时候回滚事物
+抛出运行期异常 RuntimeException
+小心不当的try-catch
+小心不当的try-catch
+
+****问题****
+不显示SQL,不显示debug的trace
+insert ignored 不好用
