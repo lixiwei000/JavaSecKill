@@ -51,6 +51,28 @@ tx:advice+aop命名空间           - 一次配置永久生效
 小心不当的try-catch
 小心不当的try-catch
 
+
+=================Web相关课程=================
+Restful
+一种URI表述方式
+资源的状态和状态转移
+规范:
+    GET 查询操作
+    POST 添加 修改操作     幂等操作
+    PUT 修改操作          非幂等操作
+    DELETE 删除操作
+URL设计
+    /模块/资源/{标示}/集合1/..
+    /user/{uid}/friend 好友列表
+    /user{uid}/followers 关注者列表
+
+
+秒杀API
+GET /seckill/list 秒杀列表
+GET /seckill/{id}/detail 详情页
+GET /seckill/time/now 系统时间
+POST /seckill/{id}/exposer 暴露秒杀
+POST /seckill/{id}/{md5}/execution 执行秒杀
 ****问题****
 不显示SQL,不显示debug的trace
-insert ignored 不好用
+insert ignored 不好用              * 已解决

@@ -9,7 +9,7 @@ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.spri
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <!-- 2.数据库连接池 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <!-- 配置连接池属性 -->
+        <!-- 配置连接池w属性 -->
         <property name="driverClass" value="${driver}"/>
         <property name="jdbcUrl" value="${url}"/>
         <property name="user" value="${username}"/>
