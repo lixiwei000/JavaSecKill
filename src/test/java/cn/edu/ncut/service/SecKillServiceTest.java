@@ -95,4 +95,17 @@ public class SecKillServiceTest
         // cn.edu.ncut.exception.SecKillException: SecKill Data Rewrite
 
     }
+    @Test
+    public void testExecuteSecKillProcedure() throws Exception
+    {
+        long seckillId = 1003;
+        long userPhone = 1352278197;
+        Exposer exposer = secKillService.exportSecKillUrl(seckillId);
+        if (exposer.isExposed())
+        {
+            String md5 = exposer.getMd5();
+            SecKillExecution execution = secKillService.executeSecKillProcedure(seckillId, userPhone, md5);
+            logger.info(execution.getStateInfo());
+        }
+    }
 }

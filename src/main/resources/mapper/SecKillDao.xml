@@ -22,10 +22,19 @@
       where seckill_id = #{seckillId}
     </select>
 
-    <select id="queryAll" parameterType="int"  resultType="SecKillObj">
+    <select id="queryAll" parameterType="int"  resultType="seckillObj">
         select seckill_id ,name ,number ,start_time,end_time,create_time
         from seckill
-        order by create_time DESC
+        order by create_time desc
         limit #{offset},#{limit}
+    </select>
+    
+    <select id="killByProcedure" statementType="CALLABLE">
+        call execute_seckill(
+            #{seckillId,jdbcType=BIGINT,mode=IN},
+            #{phone,jdbcType=BIGINT,mode=IN},
+            #{killTime,jdbcType=TIMESTAMP,mode=IN},
+            #{result,jdbcType=INTEGER,mode=OUT}
+        )
     </select>
 </mapper>

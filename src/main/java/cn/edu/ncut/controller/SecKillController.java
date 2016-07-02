@@ -106,7 +106,8 @@ public class SecKillController
         }
         try
         {
-            SecKillExecution execution = secKillService.executeSecKill(seckillId,phone,md5);
+            //SecKillExecution execution = secKillService.executeSecKill(seckillId,phone,md5);
+            SecKillExecution execution = secKillService.executeSecKillProcedure(seckillId,phone,md5);
             return new SecKillResult<SecKillExecution>(true,execution);
         }
         catch (RepeatKillException e)

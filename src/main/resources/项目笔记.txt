@@ -76,3 +76,15 @@ POST /seckill/{id}/{md5}/execution 执行秒杀
 ****问题****
 不显示SQL,不显示debug的trace
 insert ignored 不好用              * 已解决
+================秒杀高并发优化====================
+1.相关应对高并发框架 Nosql+MQ
+安装Redis
+优化exposer
+    缓存优化
+    get from cache
+    if null
+        get from db
+        put cache
+    else
+        logic
+RedisDao
